@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='saas-co-cur',
-    version='0.3',
+    version='0.4',
     license='MIT',
     author="David Schwartz",
     author_email='david.schwartz@devfactory.com',
