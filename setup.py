@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='saas_co',
-    version='0.10',
+    version='0.11',
     license='MIT',
     author="David Schwartz",
     author_email='david.schwartz@devfactory.com',
