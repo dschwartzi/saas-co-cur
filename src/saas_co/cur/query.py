@@ -13,7 +13,6 @@ client_config = botocore.config.Config(max_pool_connections=MAX_WORKERS)
 #####################
 
 def session_from_credentials(creds, region):
-    region = params.get('region','us-east-1')
     try:
         return boto3.session.Session(
             region_name=region,
