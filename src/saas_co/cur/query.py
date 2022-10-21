@@ -7,18 +7,15 @@ import awswrangler as wr
 
 from functools import partial, reduce
 
-MAX_WORKERS = int(os.environ.get('MAX_WORKERS', '32'))
-client_config = botocore.config.Config(max_pool_connections=MAX_WORKERS)
-
 #####################
 
 def session_from_credentials(creds, region):
     try:
         return boto3.session.Session(
             region_name=region,
-            aws_access_key_id=credentials["AccessKeyId"],
-            aws_secret_access_key=credentials["SecretAccessKey"],
-            aws_session_token=credentials["SessionToken"]
+            aws_access_key_id=creds["AccessKeyId"],
+            aws_secret_access_key=creds["SecretAccessKey"],
+            aws_session_token=creds["SessionToken"]
         )
     except:
         return None
