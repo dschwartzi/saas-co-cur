@@ -40,7 +40,7 @@ def assume_role(**params):
     try:
         if access_key_id:
             sts = boto3.client('sts', 
-                               region_name=region
+                               region_name=region,
                                config=client_config,
                                aws_access_key_id=access_key_id,                
                                aws_secret_access_key=secret_access_key)
