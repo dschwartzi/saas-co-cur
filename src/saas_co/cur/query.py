@@ -40,11 +40,10 @@ def assume_role(**params):
         if access_key_id:
             sts = boto3.client('sts', 
                                region_name=region,
-                               config=client_config,
                                aws_access_key_id=access_key_id,                
                                aws_secret_access_key=secret_access_key)
         else:
-            sts = boto3.client('sts', config=client_config)
+            sts = boto3.client('sts')
         assumed_role = sts.assume_role(RoleArn=role_arn, 
                                        RoleSessionName=session_name)
         credentials = assumed_role.get('Credentials')
@@ -53,6 +52,7 @@ def assume_role(**params):
         credentials = None
 
     return session_from_credentials(credentials, region)
+
 
 #####################
 
